@@ -31,9 +31,8 @@
 
   <body data-ng-app="plDemo" data-ng-controller="MainCtrl">
     <div data-ng-hide="logged_in" class="splash">
-      <a href="/auth" class="btn btn-lg btn-default">
-        <h2>Login with <img src="http://playlyfe.com/images/logo-playlyfe.png" width="200"></h2>
-      </a>
+      Name: <input type="text" data-ng-model="user_name" />
+      <button data-ng-click="login()">Login</button>
     </div>
     <div id="player-profile" class="modal fade" data-ng-controller="ProfileCtrl">
       <div class="modal-dialog">

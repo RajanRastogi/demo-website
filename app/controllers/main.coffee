@@ -1,9 +1,17 @@
 _ = require 'lodash'
 
 module.exports = [
-  '$rootScope', '$scope', 'API', 'Profile', '$timeout', '$sce'
-  ($rootScope ,  $scope ,  API ,  Profile,   $timeout ,  $sce) ->
+  '$rootScope', '$scope', 'API', 'Profile', '$timeout', '$sce', '$http'
+  ($rootScope ,  $scope ,  API ,  Profile,   $timeout ,  $sce, $http) ->
     $scope.logged_in = false
+
+    $scope.login = () ->
+      $http.post('/login',{
+        player_id: $scope.user_name
+      })
+      .success (data, status, headers, config) ->
+        $scope.logged_in = true
+        $rootScope.$broadcast('player.load')
 
     $scope.queueNotification = (notification) ->
       $rootScope.notifications.push notification

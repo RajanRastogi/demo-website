@@ -10,7 +10,9 @@
   "dependencies": {
     "express": "3.5.0",
     "playlyfe-node-sdk": "0.2.2",
-    "sockjs": "0.3.8"
+    "sockjs": "0.3.8",
+    "request": "2.34",
+    "lodash": "2.4.1"
   },
   "license": "MIT",
   "devDependencies": {
@@ -24,6 +26,7 @@
     "coffeeify": "0.6.0",
     "deamdify": "0.1.1",
     "browserify-shim": "3.3.1",
-    "gulp-rename": "1.2.0"
+    "gulp-rename": "1.2.0",
+    "simple-oauth2": "0.1.9"
   }
 }
