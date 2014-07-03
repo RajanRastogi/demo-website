@@ -4,8 +4,8 @@ request = require('request');
 _ = require('lodash');
 
 var credentials = {
-  clientID: 'ZTFlZTVjOTYtNGM5MC00YmNlLTk0ZTMtNDU2Y2Y1NDQ4ZjJk',
-  clientSecret: 'MzYxNjA3ZDItYWQ3OC00NmZiLWJjY2UtYTAwMTIwZWM0MDU1ZTVlYmI2ZjAtYWNjMi0xMWUzLTk2NTctNWRiYzQ3YmVmYjgw',
+  clientID: '<clientID>',
+  clientSecret: '<clientSecret>',
   site: 'http://playlyfe.com',
   tokenPath: "/auth/token"
 };
