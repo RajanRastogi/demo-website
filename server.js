@@ -158,3 +158,4 @@ app.get('/logout', auth, function (req, res) {
 app.listen(3001, getToken(function(err, data){
   console.log("Server up, got token ",data.token.access_token)
 }));
+
