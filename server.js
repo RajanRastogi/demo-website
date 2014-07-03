@@ -68,8 +68,8 @@ var proxyApi = function(req, res) {
       }
     }
 
-    // remove this when the game is launched
-    req.query.debug = true;
+    // uncomment this when the game is in staging
+    //req.query.debug = true;
 
     endpoint = 'http://api.playlyfe.com/v1'
     url = endpoint+'/'+(req.params[0] != null ? req.params[0] : '');
