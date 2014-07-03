@@ -156,17 +156,11 @@ In this demo we create a simple game which consists of the following components:
 
   - Go to <kbd>Menu</kbd> <kbd>></kbd> <kbd>Settings</kbd> <kbd>></kbd> <kbd>Clients</kbd>
 
-  - Create a client with type backend and redirect `http://localhost:3001/auth/redirect`
-
-  - Click the Test Client check box. Test clients can be used during development to test your game.
+  - Create a new client and select White Label.
 
 ### 3. Simulate your game
 
   - Go to <kbd>Launcher</kbd> <kbd>></kbd> <kbd>Simulate</kbd> and simulate your game.
-
-  - Open the Simulator and Create a dummy player.
-
-    This dummy player will the user who we login as will testing the app in development.
 
 
 ### 4. Setup Demo on your machine
@@ -204,27 +198,16 @@ In this demo we create a simple game which consists of the following components:
       /**
        * ID of the client you create.
        */
-      client_id: '<YOUR TEST CLIENT ID>',
+        clientID: '<YOUR TEST CLIENT ID>',
 
       /**
        * Client Secret of the client you create.
        */
-      client_secret: '<YOUR CLIENT SECRET>',
+        clientSecret: '<YOUR CLIENT SECRET>',
 
-      /**
-       * Redirect URI of the client you create.
-       */
-      redirect_uri: 'http://localhost:3001/auth/redirect',
-
-      /**
-       * The ID of the player you create in the Simulator.
-       */
-      player_id: '<DUMMY PLAYER ID WHICH YOU CREATED IN STEP 3>'
-
-      /** In case you are behind a proxy, uncomment the next line and
-       * add the relevant credentials and host-name:port here.
-       */
-      // proxy: 'http://<YOUR_USERNAME:YOUR_PASSWORD>@<HTTP_PROXY_HOST>:<PROXY_PORT>'
+        site: 'http://playlyfe.com',
+  
+        tokenPath: '/auth/token'
     };
 
     ```

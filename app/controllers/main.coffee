@@ -23,10 +23,14 @@ module.exports = [
       $scope.register_user = false
 
     $scope.register = () ->
-      if $scope.new_user_name?
+      if $scope.new_user_id?
+        fixed_user_name = $scope.new_user_id.replace(/([a-z\d])([A-Z]+)/g, '$1_$2')
+                    .replace(/[-\s]+/g, '_')
+                    .replace(/[^A-Za-z0-9_-]/g,'')
+                    .toLowerCase()
         $http.post('/register', {
-            id: $scope.new_user_name
-            alias: $scope.new_user_name
+            id: fixed_user_name
+            alias: $scope.new_user_id
         })
         .success (data, status, headers , config) ->
           $scope.login_status = "Registration successful"

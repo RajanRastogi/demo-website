@@ -34,7 +34,7 @@
       <form class="form-horizontal" role="form">
         <legend>Login</legend>
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+          <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
           <div class="col-sm-10">
             <input type="text" id="inputEmail3" class="form-control" data-ng-model="user_name">
           </div>
@@ -56,14 +56,14 @@
       <form class="form-horizontal" role="form">
         <legend>Register</legend>
         <div class="form-group">
-          <label for="inputEmail1" class="col-sm-2 control-label">Name</label>
+          <label for="inputEmail1" class="col-sm-2 control-label">ID</label>
           <div class="col-sm-10">
-            <input type="text" id="inputEmail1" class="form-control" data-ng-model="new_user_name" >
+            <input type="text" id="inputEmail1" class="form-control" data-ng-model="new_user_id" >
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button data-ng-disabled="!new_user_name" data-ng-click="register()" class="btn btn-default">Submit</button>
+            <button data-ng-disabled="!new_user_id" data-ng-click="register()" class="btn btn-default">Submit</button>
             <button data-ng-click="userLogin()" class="btn btn-default">Back</button>
           </div>
         </div>
