@@ -30,9 +30,49 @@
   </head>
 
   <body data-ng-app="plDemo" data-ng-controller="MainCtrl">
-    <div data-ng-hide="logged_in" class="splash">
-      Name: <input type="text" data-ng-model="user_name" />
-      <button data-ng-click="login()">Login</button>
+    <div data-ng-hide="logged_in || register_user" class="splash">
+      <form class="form-horizontal" role="form">
+        <legend>Login</legend>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" id="inputEmail3" class="form-control" data-ng-model="user_name">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button data-ng-click="login()" data-ng-disabled="!user_name" class="btn btn-default">Sign in</button>
+            <button data-ng-click="userRegister()" class="btn btn-default">Register</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <span class="help-block">{{login_status}}</span>
+          </div>
+         </div> 
+      </form>
+    </div>
+    <div data-ng-show="register_user" class="splash">
+      <form class="form-horizontal" role="form">
+        <legend>Register</legend>
+        <div class="form-group">
+          <label for="inputEmail1" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" id="inputEmail1" class="form-control" data-ng-model="new_user_name" >
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button data-ng-disabled="!new_user_name" data-ng-click="register()" class="btn btn-default">Submit</button>
+            <button data-ng-click="userLogin()" class="btn btn-default">Back</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <span class="help-block">{{reg_status}}</span>
+          </div>
+         </div> 
+      </form>
     </div>
     <div id="player-profile" class="modal fade" data-ng-controller="ProfileCtrl">
       <div class="modal-dialog">

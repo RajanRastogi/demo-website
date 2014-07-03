@@ -4,6 +4,7 @@ module.exports = [
   '$rootScope', '$scope', 'API', 'Profile', '$timeout', '$sce', '$http'
   ($rootScope ,  $scope ,  API ,  Profile,   $timeout ,  $sce, $http) ->
     $scope.logged_in = false
+    $scope.register_user = false
 
     $scope.login = () ->
       $http.post('/login',{
@@ -12,6 +13,26 @@ module.exports = [
       .success (data, status, headers, config) ->
         $scope.logged_in = true
         $rootScope.$broadcast('player.load')
+      .error (data, status, headers, config) ->
+        $scope.login_status = "Invalid ID"
+
+    $scope.userRegister = () ->
+      $scope.register_user = true
+
+    $scope.userLogin = () ->
+      $scope.register_user = false
+
+    $scope.register = () ->
+      if $scope.new_user_name?
+        $http.post('/register', {
+            id: $scope.new_user_name
+            alias: $scope.new_user_name
+        })
+        .success (data, status, headers , config) ->
+          $scope.login_status = "Registration successful"
+          $scope.register_user = false
+        .error (data, status, headers , config) ->
+          $scope.reg_status = "Invalid ID"
 
     $scope.queueNotification = (notification) ->
       $rootScope.notifications.push notification

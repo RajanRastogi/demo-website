@@ -8,11 +8,17 @@
     "build-dev": "node ./node_modules/gulp/bin/gulp.js build-dev"
   },
   "dependencies": {
-    "express": "3.5.0",
-    "playlyfe-node-sdk": "0.2.2",
+    "express": "4.4.5",
     "sockjs": "0.3.8",
     "request": "2.34",
-    "lodash": "2.4.1"
+    "lodash": "2.4.1",
+    "morgan": "~1.0.0",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.0",
+    "cookie-session": "~1.0.0",
+    "errorhandler": "~1.0.0",
+    "body-parser": "~1.4.3",
+    "express-session": "~1.6.0"
   },
   "license": "MIT",
   "devDependencies": {
